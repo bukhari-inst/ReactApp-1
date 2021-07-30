@@ -9,10 +9,15 @@ const Todo = () => {
     { id: 3, title: 'Code' },
   ];
 
+  const eventCreateTodo = (todo) => {
+    todos.push(todo);
+    console.log(todos);
+  };
+
   return (
     <div className="App">
       <h3>Todo List</h3>
-      <TodoCreate />
+      <TodoCreate onCreateTodo={eventCreateTodo} />
       <TodoList dataTodos={todos} />
     </div>
   );
