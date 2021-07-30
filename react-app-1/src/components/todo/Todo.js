@@ -1,5 +1,6 @@
 import './Todo.css';
 import TodoList from '../todo-list/TodoList';
+import TodoCreate from '../todo-create/TodoCreate';
 
 const Todo = () => {
   const todos = [
@@ -11,6 +12,7 @@ const Todo = () => {
   return (
     <div className="App">
       <h3>Todo List</h3>
+      <TodoCreate />
       <TodoList dataTodos={todos} />
     </div>
   );
