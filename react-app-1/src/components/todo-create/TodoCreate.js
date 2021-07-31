@@ -1,21 +1,31 @@
 import './TodoCreate.css';
+import { useState } from 'react';
 
 const TodoCreate = (props) => {
+  const [getInputTodo, setInputTodo] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const newTodo = {
       id: Math.floor(Math.random() * 100) + 1,
-      title: 'Learn React',
+      title: getInputTodo,
     };
 
     props.onCreateTodo(newTodo);
 
+    setInputTodo('');
+
     // console.log(newTodo);
+  };
+
+  const handleInputTodo = (event) => {
+    setInputTodo(event.target.value);
+    console.log(getInputTodo);
   };
 
   return (
     <form onSubmit={handleSubmit} className="todo-form">
-      <input type="text" />
+      <input type="text" value={getInputTodo} onChange={handleInputTodo} />
       <button type="submit">Add</button>
     </form>
   );
