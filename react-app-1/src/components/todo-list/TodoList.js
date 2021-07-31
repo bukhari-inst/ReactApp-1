@@ -1,4 +1,3 @@
-import Todo from '../todo/Todo';
 import './TodoList.css';
 
 const TodoList = (props) => {
